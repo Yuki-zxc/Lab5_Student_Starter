@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Simple Omelette Recipe</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+  <script src="./js/individual.js" defer></script>
+</head>
+<body>
+  <main class="recipe-page">
+    <article class="recipe-card">
+      <img src="./assets/images/image-omelette.jpeg" alt="A freshly cooked omelette folded on a plate with herbs and greens" class="recipe-image">
+      <div class="recipe-content">
+        <h1>Simple Omelette Recipe</h1>
+        <p class="recipe-description">An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+
+        <section class="prep-time" aria-labelledby="prep-heading">
+          <h2 id="prep-heading">Preparation time</h2>
+          <ul>
+            <li><strong>Total:</strong> Approximately 10 minutes</li>
+            <li><strong>Preparation:</strong> 5 minutes</li>
+            <li><strong>Cooking:</strong> 5 minutes</li>
+          </ul>
+        </section>
+
+        <section class="ingredients-section" aria-labelledby="ingredients-heading">
+          <h2 id="ingredients-heading">Ingredients</h2>
+          <div class="servings-controls" role="group" aria-label="Number of servings">
+            <span>Servings:</span>
+            <button type="button" id="decrease-servings" aria-label="Decrease servings">-</button>
+            <output id="servings-count" aria-live="polite">1</output>
+            <button type="button" id="increase-servings" aria-label="Increase servings">+</button>
+            <label for="servings-input" class="servings-input-label">Servings from 1 to 10</label>
+            <input id="servings-input" type="number" min="1" max="10" step="1" value="1" aria-describedby="servings-error">
+            <button type="button" id="apply-servings">Apply</button>
+          </div>
+          <p id="servings-error" class="servings-error" aria-live="polite"></p>
+          <p class="recipe-note">Quantities are calculated for the selected number of servings.</p>
+
+          <ul class="ingredients-list">
+            <li class="ingredient" data-id="eggs"><label><input type="checkbox" class="ingredient-check"><span class="ingredient-text"><span class="ingredient-quantity">2-3</span> large eggs</span></label></li>
+            <li class="ingredient" data-id="salt"><label><input type="checkbox" class="ingredient-check"><span class="ingredient-text">Salt, to taste</span></label></li>
+            <li class="ingredient" data-id="pepper"><label><input type="checkbox" class="ingredient-check"><span class="ingredient-text">Pepper, to taste</span></label></li>
+            <li class="ingredient" data-id="fat"><label><input type="checkbox" class="ingredient-check"><span class="ingredient-text"><span class="ingredient-quantity">1</span> tbsp of butter or oil</span></label></li>
+            <li class="ingredient" data-id="fillings"><label><input type="checkbox" class="ingredient-check"><span class="ingredient-text">Optional fillings: cheese, diced vegetables, cooked meats, herbs</span></label></li>
+          </ul>
+
+          <p id="ingredients-progress" class="ingredients-progress" aria-live="polite">Prepared 0 of 5</p>
+          <button type="button" id="reset-ingredients">Reset checks</button>
+        </section>
+
+        <section class="shopping-section" aria-labelledby="shopping-title">
+          <h2 id="shopping-title">Still to prepare</h2>
+          <p id="shopping-list" class="shopping-list" aria-live="polite"></p>
+        </section>
+
+        <hr>
+
+        <section class="instructions-section" aria-labelledby="instructions-heading">
+          <h2 id="instructions-heading">Instructions</h2>
+          <ol class="instructions-list">
+            <li><strong>Beat the eggs:</strong> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</li>
+            <li><strong>Heat the pan:</strong> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+            <li><strong>Cook the omelette:</strong> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</li>
+            <li><strong>Add fillings (optional):</strong> When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</li>
+            <li><strong>Fold and serve:</strong> As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</li>
+            <li><strong>Enjoy:</strong> Serve hot, with additional salt and pepper if needed.</li>
+          </ol>
+        </section>
+
+        <hr>
+
+        <section class="nutrition-section" aria-labelledby="nutrition-heading">
+          <h2 id="nutrition-heading">Nutrition</h2>
+          <p>The table below shows nutritional values per serving without the additional fillings.</p>
+          <table class="nutrition-table">
+            <tbody>
+              <tr><th scope="row">Calories</th><td>277kcal</td></tr>
+              <tr><th scope="row">Carbs</th><td>0g</td></tr>
+              <tr><th scope="row">Protein</th><td>20g</td></tr>
+              <tr><th scope="row">Fat</th><td>22g</td></tr>
+            </tbody>
+          </table>
+
+          <div class="calories-total-box" aria-labelledby="calories-total-heading">
+            <h3 id="calories-total-heading" class="calories-total-title">Total dish calories</h3>
+            <p id="total-calories" class="calories-total-value" aria-live="polite">277 kcal</p>
+            <p class="calories-total-note">Навчальний розрахунок за таблицею без начинок (277 kcal на 1 порцію).</p>
+          </div>
+        </section>
+
+        <section class="individual-note-section" aria-labelledby="individual-note-heading">
+          <h2 id="individual-note-heading" class="individual-note-title">Personal Note</h2>
+          <div class="individual-note-controls">
+            <label for="individual-note-input" class="individual-note-label">Write a personal note or tip for this recipe:</label>
+            <textarea id="individual-note-input" class="individual-note-input" rows="3" placeholder="For example: Add a pinch of smoked paprika or serve with crispy toast..."></textarea>
+            <div class="individual-note-buttons">
+              <button type="button" id="individual-note-save" class="individual-btn individual-btn-primary">Save note</button>
+              <button type="button" id="individual-note-clear" class="individual-btn individual-btn-secondary">Clear note</button>
+            </div>
+          </div>
+          <p id="individual-note-status" class="individual-note-status" aria-live="polite"></p>
+          <div id="individual-note-box" class="individual-note-box is-hidden">
+            <strong class="individual-note-box-title">Your note:</strong>
+            <p id="individual-note-output" class="individual-note-output" aria-live="polite"></p>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
